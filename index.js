@@ -13,7 +13,9 @@ function invert(people){
     // Uma dica, você pode utilizar a função prompt para permitir que o usuário digite os
     // nomes dos usuários.
 
-    return [];
+    people.reverse();
+
+    return people;
 }
 
 /**
@@ -22,6 +24,7 @@ function invert(people){
  * @param {*} grades : Um array de notas
  * @returns Uma média a partir do array de notas
  */
+
 function mean(grades){
 
     // TODO
@@ -29,7 +32,9 @@ function mean(grades){
     // o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a média para aprovação é igual
     // ou superior a 7.
 
-    return 0;
+    let media = (grades[0] + grades[1] + grades[2]) / 3;
+
+    return media;
 }
 
 /**
@@ -38,6 +43,8 @@ function mean(grades){
  * @param {*} mean : Um número que representa uma média
  * @returns Uma string dizendo se um estudante está aprovado ou não
  */
+
+
 function isApproved(mean){
 
     // TODO
@@ -45,7 +52,9 @@ function isApproved(mean){
     // o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a média para aprovação é igual
     // ou superior a 7.
 
-    return "";
+    if(mean >= 7) return "aprovado";
+    else return "reprovado";
+
 }
 
 /**
@@ -54,6 +63,7 @@ function isApproved(mean){
  * @param {*} strDate : Uma string no formato de data
  * @returns Uma descrição da data informada
  */
+
 function wide(strDate){
 
     // TODO
@@ -62,7 +72,53 @@ function wide(strDate){
     // “split” de uma string que quebra a string em pedaços dado um separador como argumento da função.
     // Nesse caso, o separador é a barra (/) da data.
 
-    return "";
+    let date = strDate.split("/");
+    let dia = date[0];
+    let mes = date[1];
+    let ano = date[2];
+
+    switch(mes){
+        case "01":
+            mes = "janeiro";
+            break;
+        case "02":
+            mes = "fevereiro";
+        break;
+        case "03":
+            mes = "março";
+            break;
+        case "04":
+            mes = "abril";
+        break;
+        case "05":
+            mes = "maio";
+            break;
+        case "06":
+            mes = "junho";
+        break;
+        case "07":
+            mes = "julho";
+            break;
+        case "08":
+            mes = "agosto";
+        break;
+        case "09":
+            mes = "setembro";
+            break;
+        case "10":
+            mes = "outubro";
+        break;
+        case "11":
+            mes = "novembro";
+            break;
+        case "12":
+            mes = "dezembro";
+        break;
+        default:
+            return "";
+    }
+
+    return dia + " de " + mes + " de " + ano;
 }
 
 // Trecho utilizado pelos testes
